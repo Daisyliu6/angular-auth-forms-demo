@@ -1,0 +1,99 @@
+<!-- <div *ngIf="user">
+<h2>{{user.username | uppercase}} Details</h2>
+<div class="jumbotron">
+  <label>
+    Username: 
+    <input [(ngModel)]="user.username" placeholder="Username">
+  </label>
+  <label>
+    Password: 
+    <input [(ngModel)]="user.password" placeholder="Password">
+  </label>
+  <label>
+    First Name: 
+    <input [(ngModel)]="user.firstName" placeholder="First Name">
+  </label>
+  <label>
+    Last Name: 
+    <input [(ngModel)]="user.lastName" placeholder="Last Name">
+  </label>
+  <label>
+    Phone Num: 
+    <input [(ngModel)]="user.phoneNum" placeholder="Phone Num">
+  </label>
+  <label>
+    Position: 
+    <input [(ngModel)]="user.position" placeholder="Position">
+  </label>
+  <hr>
+
+  <div>
+  <label>Role: </label>
+    <select [(ngModel)]="user.role" [disabled]="!isAdmin">
+      <option value="">--Select a Role--</option>
+      <option value="User">User</option>
+      <option value="Admin">Admin</option>
+    </select>
+  </div>
+
+    <button (click)="goBack()">Go Back</button>
+    <button (click)="save()">Save</button>
+</div>
+</div> -->
+
+
+<!-- template-driven forms -->
+
+<div *ngIf="user" class="jumbotron">
+  <h2>{{user.username | uppercase}} Details</h2>
+<form #detailForm="ngForm">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username" 
+    required [(ngModel)]="user.username" name="username">
+  </div>
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input type="text" class="form-control" id="firstName" 
+    required [(ngModel)]="user.firstName" name="firstName">
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text" class="form-control" id="lastName" 
+    required [(ngModel)]="user.lastName" name="lastName">
+  </div>
+  <div class="form-group">
+    <label for="position">Position</label>
+    <input type="text" class="form-control" id="position"
+      [(ngModel)]="user.position" name="position">
+  </div>
+  <div class="form-group">
+    <label for="phoneNum">Phone Num</label>
+    <input type="number" class="form-control" id="phoneNum" 
+     [(ngModel)]="user.phoneNum" name="phoneNum">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" 
+    required [(ngModel)]="user.password" name="password">
+  </div>
+  
+  <div class="form-group">
+    <label for="role">Role</label>
+    <!-- <select name="role" id="role" class="form-control"
+    [(ngModel)]="role.role" #role="ngModel" 
+    [disabled]="!isAdmin"> -->
+    <!-- <option *ngFor="let role of roles" [value]="role.role">{{role.role}}</option> -->
+    <select name="role" id="role" class="form-control"
+    [(ngModel)]="user.role" #role="ngModel" 
+    [disabled]="!isAdmin">
+    <option *ngFor="let role of roles" [value]="role.role">{{role.role}}</option>
+    </select>
+  </div>
+  
+    <!-- <button type="submit" class="btn-success" [disabled]="!detailForm.form.valid">Save</button> -->
+    <button class="btn btn-danger" (click)="updateDetail()">Update Detail</button>
+    <button class="btn btn-success" (click)="goBack()">Go Back</button>
+  </form>
+  </div>
+  

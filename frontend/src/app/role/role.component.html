@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <div>
+  <h2>Role Setting</h2>
+  <label>New Role
+    <input [(ngModel)]="role" type="text">
+  </label> 
+  <button (click)="addNewRole(role); role=''">Add</button>
+  </div>
+  <div>
+  <label>Role List</label>
+  <ul class="roles" *ngIf="!isLoading">
+  <li *ngFor="let role of roles">
+    {{role.role}}
+    <button [disabled]="role.role == 'Admin'" class="btn btn-outline-danger btn-sm" (click)="deleteSelectedRole(role)">X</button>
+  </li>
+  </ul>
+  </div>
+</div>
+

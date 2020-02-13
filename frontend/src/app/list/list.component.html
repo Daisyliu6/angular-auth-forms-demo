@@ -1,0 +1,11 @@
+﻿<div class="jumbotron">
+<h3>All registered users:</h3>
+<ul *ngIf="users">
+    <li *ngFor="let user of users">
+        <a routerLink="../users/detail/{{user._id}}">
+            {{user.username}} 
+        </a>
+        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+    </li>
+</ul>
+</div>
