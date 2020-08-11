@@ -2,12 +2,12 @@
 // exports an object containing all of the database model objects 
 // an easy way to access any part of the database from a single point
 
-const config = require('config.json');
+require('dotenv').config();
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 // Connecting to the database
-mongoose.connect(process.env.MONGODB_URI || config.connectionString, 
+mongoose.connect(process.env.MONGODB_URI || process.env.connectionString, 
     { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}).then(() => {
     console.log("Successfully connected to the database");    
 }).catch(err => {
