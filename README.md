@@ -12,7 +12,18 @@
 * Step 3: open a new terminal, go to frontend folder, run npm start
 * Step 4: localhost 8080 will open automatically if compily successfully
 * Step 5: register & login
-![alt text]()
+![alt text](https://github.com/Daisyliu6/ng-webpack-auth-forms-demo/blob/master/images/register.png)
+![alt text](https://github.com/Daisyliu6/ng-webpack-auth-forms-demo/blob/master/images/login.png)
 ## Access Control 
-# Normal user 
-* 
+### Normal user 
+* normal user home page 
+![alt text](https://github.com/Daisyliu6/ng-webpack-auth-forms-demo/blob/master/images/normal_user_home_page.png)
+* normal user detail page
+![alt text](https://github.com/Daisyliu6/ng-webpack-auth-forms-demo/blob/master/images/normal_user_detail_page.png)
+### Admin 
+* admin goes to list page automatically 
+![alt text](https://github.com/Daisyliu6/ng-webpack-auth-forms-demo/blob/master/images/admin_list_page.png)
+* admin can create/delete roles
+![alt text](https://github.com/Daisyliu6/ng-webpack-auth-forms-demo/blob/master/images/admin_role_page.png)
+* admin control normal users' role
+![alt text](https://github.com/Daisyliu6/ng-webpack-auth-forms-demo/blob/master/images/admin_control.png)
