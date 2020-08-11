@@ -12,7 +12,7 @@
 * Step 3: open a new terminal, go to frontend folder, run npm start
 * Step 4: localhost 8080 will open automatically if compily successfully
 * Step 5: register & login
-![alt text](../frontend/images/register.png)
+![alt text]()
 ## Access Control 
 # Normal user 
 * 
