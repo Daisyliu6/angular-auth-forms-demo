@@ -6,12 +6,15 @@
 * all users need to register first 
 * normal users can only see home page and its details page while cannot change the role
 * admin can see the list of all users, the list of all roles and can change all details of normal users
+## you can play with it here 
+
 ## Steps
 * Step 1: npm install
 * Step 2: go to folder backend, run node server.js
 * Step 3: open a new terminal, go to frontend folder, run npm start
 * Step 4: localhost 8080 will open automatically if compily successfully
 * Step 5: register & login
+
 ![alt text](https://github.com/Daisyliu6/ng-webpack-auth-forms-demo/blob/master/images/register.png)
 ![alt text](https://github.com/Daisyliu6/ng-webpack-auth-forms-demo/blob/master/images/login.png)
 ## Access Control 
