@@ -6,7 +6,8 @@
 * all users need to register first 
 * normal users can only see home page and its details page while cannot change the role
 * admin can see the list of all users, the list of all roles and can change all details of normal users
-## You can play with it here 
+## You can play around here 👇
+http://ec2-54-252-245-86.ap-southeast-2.compute.amazonaws.com/login
 
 ## Steps
 * Step 1: go to backend and frontend folder run npm install
