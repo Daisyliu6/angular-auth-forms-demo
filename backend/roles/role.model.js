@@ -5,6 +5,16 @@ const schema = new Schema({
   role: String
 });
 
-schema.set('toJSON', { virtuals: true });
+// old one
+// schema.set('toJSON', { virtuals: true });
+
+schema.set('toJSON', {
+  virtuals: true,
+  versionKey: false,
+  transform: function (doc, ret) {
+      delete ret._id;
+      delete ret.hash;
+  }
+});
 
 module.exports = mongoose.model('Role', schema);

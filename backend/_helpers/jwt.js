@@ -10,12 +10,12 @@ module.exports = jwt;
 
 function jwt() {
   const secret = config.secret;
-  return expressJwt({ secret, isRevoked }).unless({
+  return expressJwt({ secret, algorithms: ['HS256'], isRevoked }).unless({
     path: [
       // public routes that don't require authentication
       "/users/authenticate",
       "/users/register",
-    ],
+    ]
   });
 }
 
@@ -27,4 +27,4 @@ async function isRevoked(req, payload, done) {
     return done(null, true);
   }
   done();
-}
+};

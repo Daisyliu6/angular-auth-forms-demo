@@ -14,20 +14,32 @@ module.exports = {
     getById,
     create,
     update,
-    delete: _delete,
+    delete: _delete
 };
 
 async function authenticate({ username, password }) {
-    const user = await User.findOne({ username });
-    if (user && bcrypt.compareSync(password, user.hash)) {
-        const { hash, ...userWithoutHash } = user.toObject();
-        const token = jwt.sign({ sub: user.id, role: user.role, username: user.username }, config.secret);
-        return {
-            ...userWithoutHash,
-            token
-        };
-    }
+  const user = await User.findOne({ username });
+  if (user && bcrypt.compareSync(password, user.hash)) {
+      const token = jwt.sign({ sub: user.id }, config.secret, { expiresIn: '7d' });
+      return {
+          ...user.toJSON(),
+          token
+      };
+  }
 }
+
+// old one
+// async function authenticate({ username, password }) {
+//     const user = await User.findOne({ username });
+//     if (user && bcrypt.compareSync(password, user.hash)) {
+//         const { hash, ...userWithoutHash } = user.toObject();
+//         const token = jwt.sign({ sub: user.id, role: user.role, username: user.username }, config.secret);
+//         return {
+//             ...userWithoutHash,
+//             token
+//         };
+//     }
+// }
 
 async function getAll() {
     return await User.find().select('-hash');
