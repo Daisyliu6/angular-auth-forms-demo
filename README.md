@@ -10,7 +10,7 @@
 
 
 ## Steps
-* Step 1: go to backend and frontend folder run npm install
+* Step 1: go to backend and frontend folder run npm install (You do need to create one env file to store your database information to make it work)
 * Step 2: go to backend folder, run npm start
 * Step 3: open a new terminal, go to frontend folder, run npm start
 * Step 4: localhost 8080 will open automatically if compily successfully
